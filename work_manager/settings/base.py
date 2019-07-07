@@ -11,6 +11,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+
+    'apps.work_order',
 ]
 
 MIDDLEWARE = [
