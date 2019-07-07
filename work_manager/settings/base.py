@@ -12,6 +12,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
 
+    'rest_framework',
+
     'apps.work_order',
 ]
 
@@ -26,7 +28,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'work_manager.urls'
-
 
 TEMPLATES = [
     {

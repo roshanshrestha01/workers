@@ -17,10 +17,18 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
+from apps.work_order.routes import router as work_order_router
+from .routers import CustomDefaultRouter
+
 admin.site.site_header = 'Worker Manager App'
+
+router = CustomDefaultRouter()
+
+router.extend(work_order_router)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('v1/', include((router.urls, 'api'), namespace='api')),
 ]
 
 if settings.DEBUG:
