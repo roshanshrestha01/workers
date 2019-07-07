@@ -14,7 +14,7 @@ class WorkOrder(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     deadline = models.DateField()
-    worker = models.ManyToManyField(Worker, related_name='work_orders')
+    workers = models.ManyToManyField(Worker, related_name='work_orders')
 
     def __str__(self):
         return self.title

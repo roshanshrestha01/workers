@@ -24,11 +24,11 @@ class WorkOrderViewSet(viewsets.ModelViewSet):
     def assign(self, request, pk=None, worker_id=None):
         try:
             work_order = self.get_object()
-            worker_count = work_order.worker.all().count()
+            worker_count = work_order.workers.all().count()
             if worker_count >= 5:
                 raise APIException({"errors": ["Maximum worker allocated."]})
             worker = Worker.objects.get(pk=worker_id)
-            work_order.worker.add(worker)
+            work_order.workers.add(worker)
         except Worker.DoesNotExist:
             raise APIException({"errors": ["Requested worker does not exists."]})
         return Response({"message": "{} assigned to {}".format(worker.name, work_order.title)})
@@ -38,7 +38,7 @@ class WorkOrderViewSet(viewsets.ModelViewSet):
         work_order = self.get_object()
         try:
             worker = Worker.objects.get(pk=worker_id)
-            work_order.worker.remove(worker_id)
+            work_order.workers.remove(worker_id)
         except Worker.DoesNotExist:
             raise APIException({"errors": ["Requested worker does not exists."]})
         return Response({"message": "{} unassigned from {}".format(worker.name, work_order.title)})
