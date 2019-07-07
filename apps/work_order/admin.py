@@ -4,8 +4,8 @@ from .models import Worker, WorkOrder
 
 
 class WorkerAdmin(admin.ModelAdmin):
-    list_display = ['name', 'company', 'email', ]
-    search_fields = ['name', 'company', 'email', ]
+    list_display = ['name', 'company_name', 'email', ]
+    search_fields = ['name', 'company_name', 'email', ]
 
 
 admin.site.register(Worker, WorkerAdmin)
