@@ -6,12 +6,18 @@ from rest_framework.filters import OrderingFilter
 from rest_framework.response import Response
 
 from .models import Worker, WorkOrder
-from .serializers import WorkerSerializer, WorkOrderSerializer
+from .serializers import WorkerSerializer, WorkOrderSerializer, WorkerDetailSerializer
 
 
 class WorkerViewSet(viewsets.ModelViewSet):
     serializer_class = WorkerSerializer
     queryset = Worker.objects.all()
+
+    @action(detail=True)
+    def work_orders(self, request, pk=None):
+        worker = self.get_object()
+        data = WorkerDetailSerializer(worker).data
+        return Response(data)
 
 
 class WorkOrderViewSet(viewsets.ModelViewSet):
