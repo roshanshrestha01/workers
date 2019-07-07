@@ -1,11 +1,11 @@
 ## Work Orders
 
-Application to organizer worker and their assigned work order. Application contributes to properly manage
-workers and their assign work orders
+Application to organize worker and their assigned work order. Contributes to properly manage
+workers watch work order deadlines.
 
 ### Installation
 
-Below are bash to be execute to fully run project in development environment. 
+Below are bash command to be execute to fully run project in development environment. 
 
 ```bash
 mkdir project
@@ -14,7 +14,7 @@ Copy project zip
 Unzip project zip
 virtualenv env
 source env/bin/activate
-cd app
+cd project_dir
 pip install -r requirements/dev.txt
 python manage.py migrate
 python manage.py runserver
