@@ -1,0 +1,6 @@
+.idea
+*.pyc
+*~
+work_manager/settings/env.py
+db.sqlite3
+
