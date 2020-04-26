@@ -1,4 +1,4 @@
-## Work Orders
+## Workers
 
 Application to organize worker and their assigned work order. Contributes to properly manage
 workers watch work order deadlines.
@@ -21,22 +21,10 @@ python manage.py runserver
 ```
 Server running at http://localhost:8000/
 
-### Project
-
-Application in deployed at https://demo.rktcnepal.com/
-
-https://demo.rktcnepal.com/admin for admin access with:
-
-Username: admin \
-Password: admin123
-
 ### Necessary Endpoint
 
 Development \
 BASE_URL = http://localhost:8000/ 
-
-Production \
-BASE_URL = https://demo.rktcnepal.com/ 
 
 
 ####  Worker List
